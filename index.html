@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentaya Bhayangkara Run 2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+background:#061A33;
+color:white;
+overflow-x:hidden;
+}
+
+/* LOADER */
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#061A33;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.loader-circle{
+width:80px;
+height:80px;
+border:8px solid rgba(255,255,255,.2);
+border-top:8px solid #00bfff;
+border-radius:50%;
+animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+100%{transform:rotate(360deg);}
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:15px 8%;
+background:rgba(0,0,0,.3);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:999;
+}
+
+nav h2{
+color:#fff;
+font-size:24px;
+}
+
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+nav ul li a{
+color:white;
+text-decoration:none;
+font-weight:500;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6)),
+url('716.jpg');
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+.hero-content{
+max-width:900px;
+animation:fadeUp 1.5s ease;
+}
+
+.hero h1{
+font-size:65px;
+font-weight:800;
+line-height:1.1;
+}
+
+.hero h2{
+color:#00c8ff;
+margin-top:15px;
+}
+
+.hero p{
+margin-top:20px;
+font-size:18px;
+}
+
+.btn{
+display:inline-block;
+margin-top:30px;
+padding:15px 35px;
+background:#00bfff;
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-weight:bold;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 20px #00bfff;
+}
+
+/* COUNTDOWN */
+.countdown{
+display:flex;
+justify-content:center;
+gap:20px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.box{
+width:120px;
+padding:20px;
+background:rgba(255,255,255,.1);
+backdrop-filter:blur(10px);
+border-radius:20px;
+}
+
+.box h3{
+font-size:35px;
+color:#00c8ff;
+}
+
+/* SECTION */
+section{
+padding:90px 8%;
+}
+
+.title{
+text-align:center;
+font-size:42px;
+margin-bottom:50px;
+}
+
+.glass{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:25px;
+}
+
+/* INFO GRID */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.08);
+padding:30px;
+border-radius:20px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card h3{
+margin-bottom:15px;
+color:#00c8ff;
+}
+
+/* DOORPRIZE */
+.prize-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+}
+
+.prize{
+background:rgba(255,255,255,.08);
+padding:30px;
+text-align:center;
+border-radius:20px;
+}
+
+.prize h2{
+font-size:50px;
+}
+
+/* CTA */
+.cta{
+text-align:center;
+background:linear-gradient(135deg,#00bfff,#0078ff);
+border-radius:30px;
+padding:60px 20px;
+}
+
+/* FOOTER */
+footer{
+padding:30px;
+text-align:center;
+background:#02111f;
+}
+
+/* FLOAT WA */
+.wa{
+position:fixed;
+right:20px;
+bottom:20px;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+text-decoration:none;
+color:white;
+z-index:999;
+box-shadow:0 0 20px #25D366;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+nav ul{
+display:none;
+}
+
+.box{
+width:90px;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<div id="loader">
+<div class="loader-circle"></div>
+</div>
+
+<nav>
+<h2>MBR 2026</h2>
+<ul>
+<li><a href="#about">Tentang</a></li>
+<li><a href="#race">Kategori</a></li>
+<li><a href="#prize">Doorprize</a></li>
+<li><a href="#register">Daftar</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+
+<h1>MENTAYA BHAYANGKARA RUN 2026</h1>
+
+<h2>RUN WITH PRIDE, RUN WITH SPIRIT</h2>
+
+<p>
+Minggu, 05 Juli 2026<br>
+Jelawat - Kota Sampit
+</p>
+
+<div class="countdown">
+<div class="box">
+<h3 id="days">00</h3>
+Hari
+</div>
+
+<div class="box">
+<h3 id="hours">00</h3>
+Jam
+</div>
+
+<div class="box">
+<h3 id="minutes">00</h3>
+Menit
+</div>
+
+<div class="box">
+<h3 id="seconds">00</h3>
+Detik
+</div>
+</div>
+
+<a href="https://bit.ly/hk-run-indonesia" class="btn">
+DAFTAR SEKARANG
+</a>
+
+</div>
+</section>
+
+<section id="about" class="reveal">
+<h2 class="title">Informasi Event</h2>
+
+<div class="glass">
+<p>
+Mentaya Bhayangkara Run 2026 merupakan event lari tahunan dalam rangka memperingati HUT POLRI ke-80 yang diselenggarakan oleh Polres Kotawaringin Timur.
+</p>
+
+<br>
+
+<p>
+Kategori lomba terdiri dari Pelajar dan Umum dengan jarak tempuh 8 Kilometer.
+</p>
+</div>
+</section>
+
+<section id="race" class="reveal">
+<h2 class="title">Kategori & Race Pack</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🏃 Pelajar</h3>
+<p>Kategori khusus pelajar.</p>
+</div>
+
+<div class="card">
+<h3>🏃 Umum</h3>
+<p>Terbuka untuk seluruh masyarakat.</p>
+</div>
+
+<div class="card">
+<h3>🎽 Jersey Official</h3>
+<p>Desain eksklusif event.</p>
+</div>
+
+<div class="card">
+<h3>🏅 Medali Finisher</h3>
+<p>Diberikan kepada peserta.</p>
+</div>
+
+<div class="card">
+<h3>🔢 BIB Number</h3>
+<p>Nomor peserta resmi.</p>
+</div>
+
+</div>
+</section>
+
+<section id="prize" class="reveal">
+<h2 class="title">Doorprize Menarik</h2>
+
+<div class="prize-grid">
+
+<div class="prize">
+<h2>🛵</h2>
+Motor
+</div>
+
+<div class="prize">
+<h2>⚡</h2>
+Sepeda Listrik
+</div>
+
+<div class="prize">
+<h2>🚲</h2>
+Sepeda
+</div>
+
+<div class="prize">
+<h2>📺</h2>
+TV
+</div>
+
+<div class="prize">
+<h2>🧊</h2>
+Kulkas
+</div>
+
+<div class="prize">
+<h2>🧺</h2>
+Mesin Cuci
+</div>
+
+</div>
+</section>
+
+<section id="register" class="reveal">
+<div class="cta">
+
+<h2>Siap Menjadi Bagian dari Mentaya Bhayangkara Run 2026?</h2>
+
+<p style="margin-top:15px;">
+Klik tombol di bawah untuk melakukan pendaftaran.
+</p>
+
+<a href="https://bit.ly/hk-run-indonesia" class="btn">
+DAFTAR SEKARANG
+</a>
+
+</div>
+</section>
+
+<footer>
+© 2026 Mentaya Bhayangkara Run 2 | Polres Kotawaringin Timur
+</footer>
+
+<a class="wa" href="https://wa.me/628123456789">
+☎
+</a>
+
+<script>
+
+// Loader
+window.addEventListener("load",()=>{
+document.getElementById("loader").style.display="none";
+});
+
+// Countdown
+let countDownDate = new Date("Jul 5, 2026 06:00:00").getTime();
+
+setInterval(()=>{
+
+let now = new Date().getTime();
+
+let distance = countDownDate - now;
+
+let days = Math.floor(distance/(1000*60*60*24));
+let hours = Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+let minutes = Math.floor((distance%(1000*60*60))/(1000*60));
+let seconds = Math.floor((distance%(1000*60))/1000);
+
+document.getElementById("days").innerHTML=days;
+document.getElementById("hours").innerHTML=hours;
+document.getElementById("minutes").innerHTML=minutes;
+document.getElementById("seconds").innerHTML=seconds;
+
+},1000);
+
+// Reveal Animation
+window.addEventListener('scroll',()=>{
+
+let reveals=document.querySelectorAll('.reveal');
+
+for(let i=0;i<reveals.length;i++){
+
+let windowHeight=window.innerHeight;
+let revealTop=reveals[i].getBoundingClientRect().top;
+let revealPoint=100;
+
+if(revealTop<windowHeight-revealPoint){
+reveals[i].classList.add('active');
+}
+
+}
+
+});
+
+</script>
+
+</body>
+</html>
